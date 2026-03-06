@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吳宇琭 (YULU, WU) - 個人網頁</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #7d5fff; /* 參考原圖的紫色調 */
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* 標題區塊 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+
+        .info-left h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-info li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 區塊樣式 */
+        section {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding-left: 20px;
+        }
+
+        /* 經歷細節 */
+        .exp-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-time {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .exp-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* 教育程度 */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .content {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <div class="info-left">
+            <h1>吳宇琭 <small>(YULU, WU)</small></h1>
+            <ul class="contact-info">
+                <li>📱 0910-221-773</li>
+                <li>📧 yulu96413@gmail.com</li>
+                <li>🏠 金門縣金城鎮中興路 180 號 (893)</li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <div class="section-title">關於我 (ABOUT ME)</div>
+        <div class="content">
+            來自金門。在高二期間，我選修了許多與資訊技術相關的課程，為此領域打下了堅實的基礎。
+            我對 IT 與實作專案抱有濃厚興趣，希望能在此發揮所學並持續精進。
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">相關經歷 (EXPERIENCE)</div>
+        <div class="content">
+            <div class="exp-item">
+                <span class="exp-time">高二期間</span>
+                <div class="exp-header">專題導向課程 (Project-Based Course)</div>
+                <ul>
+                    <li>參與資訊技術相關專題，學習基礎程式編寫。</li>
+                    <li>於最終的電動車競賽中獲得優勝/佳作。</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-time">高一期間</span>
+                <div class="exp-header">選修課程</div>
+                <ul>
+                    <li>修習行動裝置程式設計課程。</li>
+                    <li>獨立開發出一款小遊戲作為期末專題成果。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;">
+
+    <section>
+        <div class="section-title">教育背景 (EDUCATION)</div>
+        <div class="content">
+            <div class="edu-item">
+                <div>
+                    <strong>國立金門高級中學</strong><br>
+                    <span>學生</span>
+                </div>
+                <div style="color: var(--accent-color);">2022 - 2025</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
