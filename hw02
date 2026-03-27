@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綜合問卷調查表</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }
+        h2 { color: #333; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="tel"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        .radio-group label, .checkbox-group label { font-weight: normal; cursor: pointer; }
+        button { 
+            width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; 
+            border-radius: 4px; font-size: 16px; cursor: pointer; transition: background 0.3s;
+        }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📋 基本資料問卷</h2>
+    <form action="/submit" method="post">
+        
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" placeholder="請輸入您的真實姓名" required>
+        </div>
+
+        <div class="form-group">
+            <label>性別</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> 男</label>
+                <label><input type="radio" name="gender" value="female"> 女</label>
+                <label><input type="radio" name="gender" value="other"> 其他</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">出生日期</label>
+            <input type="date" id="birthday" name="birthday" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">電話</label>
+            <input type="tel" id="phone" name="phone" placeholder="0912-345-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}|[0-9]{10}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="job">目前職業</label>
+            <select id="job" name="job">
+                <option value="">請選擇您的行業</option>
+                <option value="student">學生</option>
+                <option value="tech">科技/工程</option>
+                <option value="service">服務業</option>
+                <option value="finance">金融/保險</option>
+                <option value="creative">藝術/設計</option>
+                <option value="freelancer">自由接案者</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>興趣愛好（多選）</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobby" value="reading"> 閱讀</label>
+                <label><input type="checkbox" name="hobby" value="travel"> 旅行</label>
+                <label><input type="checkbox" name="hobby" value="sports"> 運動</label>
+                <label><input type="checkbox" name="hobby" value="gaming"> 電玩</label>
+                <label><input type="checkbox" name="hobby" value="cooking"> 烹飪</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">自我介紹 / 補充說明</label>
+            <textarea id="bio" name="bio" rows="4" placeholder="請簡單介紹一下自己..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="satisfaction">對此表格的滿意度 (1-10)</label>
+            <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+
+        <button type="submit">提交問卷</button>
+    </form>
+</div>
+
+</body>
+</html>
