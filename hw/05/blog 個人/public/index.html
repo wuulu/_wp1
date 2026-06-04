@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threads</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <h1 class="logo">threads</h1>
+      <div id="nav-user" class="nav-user"></div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Auth forms -->
+    <div id="auth-section" class="auth-section">
+      <div id="auth-form">
+        <h2 id="auth-title">Log in</h2>
+        <input type="text" id="auth-username" placeholder="Username" autocomplete="username">
+        <input type="password" id="auth-password" placeholder="Password" autocomplete="current-password">
+        <button id="auth-submit" class="btn-primary btn-full">Log in</button>
+        <button id="auth-toggle" class="btn-ghost btn-full">Create account</button>
+        <div id="auth-error" class="error-msg"></div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div id="main-content" style="display:none">
+      <div class="tabs">
+        <button class="tab active" data-tab="for-you">For You</button>
+        <button class="tab" data-tab="my-posts">My Posts</button>
+      </div>
+
+      <!-- Composer -->
+      <div class="composer" id="composer">
+        <textarea id="post-content" placeholder="What's on your mind?" rows="2"></textarea>
+        <div class="composer-actions">
+          <div class="composer-left">
+            <span id="char-count" class="char-count">0</span>
+          </div>
+          <div class="composer-right">
+            <button id="cancel-btn" class="btn-ghost-sm" style="display:none">Cancel</button>
+            <button id="submit-btn" class="btn-primary-sm">Post</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posts feed -->
+      <div id="posts-list"></div>
+    </div>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
