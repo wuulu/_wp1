@@ -8,7 +8,7 @@
 **課程教材：** [ccc114b/html2server](https://github.com/ccc114b/html2server) + [W3Schools](https://www.w3schools.com/)
 
 ---
-
+## 本學期作業大部分使用gemini加上opencode完成而我主要是改部分內容及敘述我的內容
 ## 目錄結構
 
 ```
@@ -62,7 +62,6 @@ _wp1/
   - 商品詳細資訊 Modal
   - 星級評分與留言
   - RWD 響應式設計
-- **行數：** 約 1164 行
 
 #### `ABOUTME.HTML` — 個人履歷
 - 吳宇琭的個人 CV 網頁
