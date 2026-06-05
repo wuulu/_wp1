@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>網頁設計課程專案總覽 — 吳宇琭</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;
+    background: #f5f7fb;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  header {
+    background: linear-gradient(135deg, #16213e, #0f3460, #1a1a2e);
+    color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  }
+  header h1 { font-size: 1.8rem; margin-bottom: .5rem; }
+  header .meta { opacity: .85; font-size: .95rem; line-height: 1.8; }
+  header .meta a { color: #a8d8ea; }
+  header .badge {
+    display: inline-block;
+    background: #e94560;
+    padding: .25rem 1rem;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-top: .8rem;
+  }
+
+  section { background: #fff; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+  section h2 { font-size: 1.3rem; color: #0f3460; border-left: 4px solid #e94560; padding-left: .75rem; margin-bottom: 1rem; }
+  section h3 { font-size: 1.05rem; color: #16213e; margin: 1rem 0 .5rem; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: .5rem; }
+  .card {
+    background: #f8f9fc;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #eef0f5;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+  .card .tag {
+    display: inline-block;
+    background: #0f3460;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: .15rem .6rem;
+    border-radius: 6px;
+    margin-bottom: .4rem;
+  }
+  .card h4 { font-size: 1rem; margin-bottom: .2rem; }
+  .card p { font-size: .85rem; color: #555; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: .5rem; }
+  th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid #eef0f5; }
+  th { background: #f0f2f7; font-weight: 600; color: #0f3460; }
+  tr:hover td { background: #f8f9fc; }
+
+  ul, ol { padding-left: 1.2rem; font-size: .92rem; }
+  li { margin-bottom: .25rem; }
+
+  .tree { font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace; font-size: .85rem; background: #f8f9fc; border-radius: 8px; padding: 1rem 1.5rem; line-height: 1.9; overflow-x: auto; white-space: pre; border: 1px solid #eef0f5; }
+
+  .pill { display: inline-block; background: #eef0f5; padding: .2rem .7rem; border-radius: 12px; font-size: .78rem; margin: .15rem; }
+
+  footer { text-align: center; font-size: .85rem; color: #888; margin-top: 2rem; padding: 1rem; }
+
+  .stat-row { display: flex; flex-wrap: wrap; gap: .8rem; margin: .5rem 0; }
+  .stat { background: #0f3460; color: #fff; padding: .5rem 1rem; border-radius: 8px; font-size: .85rem; font-weight: 600; }
+
+  details { margin-top: .5rem; }
+  details summary { cursor: pointer; font-weight: 600; color: #0f3460; padding: .3rem 0; }
+  details[open] summary { margin-bottom: .5rem; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem .5rem; }
+    header { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.3rem; }
+    section { padding: 1rem 1rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>網頁設計課程專案總覽</h1>
+    <div class="meta">
+      114 學年度第 2 學期 · 吳宇琭 (57)<br>
+      國立金門大學 資訊工程學系<br>
+      教師：陳鍾誠<br>
+      教材：<a href="https://github.com/ccc114b/html2server" target="_blank">ccc114b/html2server</a> + <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+    </div>
+    <div class="badge">大部分作業使用 Gemini + opencode 完成</div>
+  </header>
+
+  <section>
+    <h2>目錄結構</h2>
+    <div class="tree">_wp1/
+├── README.md              # 課程基本資料
+├── index.html             # Yulu 小舖 — 電商 SPA（基本版）
+├── ABOUTME.HTML           # 個人履歷 / CV 網頁
+├── .gitignore             # Git 忽略規則
+│
+├── hw/                    # 作業總目錄
+│   ├── readme.md
+│   ├── 04/                # JavaScript 基礎程式設計
+│   ├── 05/                # Node.js + Express 部落格
+│   │   ├── blog/
+│   │   ├── blog 01/
+│   │   ├── blog 02 登入/
+│   │   ├── blog 04/
+│   │   └── blog 個人/
+│   ├── 06/                # 進階 JavaScript 函數式程式設計
+│   ├── 07/                # 後端 JavaScript 模式練習
+│   ├── js/                # hello.js
+│   ├── hw02               # 問卷調查表單
+│   └── hhhh/              # Yulu 小舖加強版
+│
+└── end/                   # 期末資料
+    └── readme.md</div>
+  </section>
+
+  <section>
+    <h2>專案亮點</h2>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag">SPA</span>
+        <h4>Yulu 小舖（基本版）</h4>
+        <p>純 HTML + CSS + Vanilla JS 電商平台。購物車、優惠券、多語系、星級評分、RWD。</p>
+      </div>
+      <div class="card">
+        <span class="tag">CV</span>
+        <h4>個人履歷</h4>
+        <p>現代化版面設計，含經歷、競賽、學歷等完整 CV 資訊。</p>
+      </div>
+      <div class="card">
+        <span class="tag">全端</span>
+        <h4>部落格系統 (x5)</h4>
+        <p>Express + SQLite + Session 認證，從 CRUD 到個人化推薦的漸進式實作。</p>
+      </div>
+      <div class="card">
+        <span class="tag">強化版</span>
+        <h4>Yulu 小舖加強版</h4>
+        <p>賣家後台、訂單管理、拉霸機遊戲、優惠券。部署於 <a href="https://wuulu.github.io/yulu-store/">GitHub Pages</a>。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>JavaScript 練習</h2>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag">hw/04</span>
+        <h4>基礎程式設計</h4>
+        <p>10 題：迴圈、陣列、物件、JSON、函式、圖形</p>
+      </div>
+      <div class="card">
+        <span class="tag">hw/07</span>
+        <h4>後端模式</h4>
+        <p>10 題：解構賦值、回呼、Error-First、模板字串</p>
+      </div>
+      <div class="card">
+        <span class="tag">hw/06</span>
+        <h4>函數式程式設計</h4>
+        <p>10 題：高階函式、閉包、map/filter/reduce、IIFE</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>部落格系統 — 5 個版本</h2>
+    <table>
+      <tr><th>版本</th><th>功能</th></tr>
+      <tr><td>blog/</td><td>基礎版 — Express + SQLite + 靜態前端</td></tr>
+      <tr><td>blog 01/</td><td>v1 — 基本 CRUD</td></tr>
+      <tr><td>blog 02 登入/</td><td>+ bcrypt + express-session 登入/註冊、REST API、文章保護</td></tr>
+      <tr><td>blog 04/</td><td>v4 — 進一步迭代</td></tr>
+      <tr><td>blog 個人/</td><td>個人化過濾、推薦、大頭貼、相對時間、行內編輯</td></tr>
+    </table>
+    <div style="margin-top:.8rem;font-size:.85rem;color:#666;">
+      共通技術棧：Express · bcryptjs · express-session · better-sqlite3 · REST API
+    </div>
+  </section>
+
+  <section>
+    <h2>學習路徑</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem;">
+      <span class="pill">基礎 JS (hw/04)</span>
+      <span style="color:#e94560;font-weight:bold;">→</span>
+      <span class="pill">後端模式 (hw/07)</span>
+      <span style="color:#e94560;font-weight:bold;">→</span>
+      <span class="pill">進階 JS (hw/06)</span>
+      <span style="color:#e94560;font-weight:bold;">→</span>
+      <span class="pill">全端部落格 (hw/05)</span>
+      <span style="color:#e94560;font-weight:bold;">→</span>
+      <span class="pill">前端 SPA (index.html + hw/hhhh/)</span>
+    </div>
+    <ol style="font-size:.9rem;">
+      <li><strong>hw/04</strong> — 變數、迴圈、條件、陣列、物件、JSON</li>
+      <li><strong>hw/07</strong> — 解構賦值、回呼、Error-First、模板字串</li>
+      <li><strong>hw/06</strong> — 高階函式、閉包、map/filter/reduce、IIFE</li>
+      <li><strong>hw/hw02</strong> — HTML 表單與 CSS 樣式</li>
+      <li><strong>ABOUTME.HTML</strong> — 進階 CSS 排版 (Grid, RWD)</li>
+      <li><strong>hw/05/</strong> — Express + SQLite + Session + REST API</li>
+      <li><strong>index.html / hw/hhhh/</strong> — 整合 SPA：電商、多語系、遊戲、後台</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>技術棧</h2>
+    <div>
+      <span class="pill">HTML5</span> <span class="pill">CSS3 (Flexbox, Grid, RWD)</span>
+      <span class="pill">Vanilla JavaScript (ES6+)</span> <span class="pill">Node.js</span>
+      <span class="pill">Express</span> <span class="pill">SQLite (better-sqlite3)</span>
+      <span class="pill">bcryptjs</span> <span class="pill">express-session</span>
+      <span class="pill">localStorage / sessionStorage</span> <span class="pill">JSON</span>
+      <span class="pill">Git / GitHub Pages</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>統計摘要</h2>
+    <div class="stat-row">
+      <span class="stat">JS 練習：30+ 題</span>
+      <span class="stat">部落格：5 版</span>
+      <span class="stat">電商 SPA：2 版</span>
+      <span class="stat">HTML 頁面：3 個</span>
+      <span class="stat">總檔案：~75 個</span>
+    </div>
+  </section>
+
+  <footer>
+    國立金門大學 資訊工程學系 · 114 學年度第 2 學期 · 網頁設計課程
+  </footer>
+
+</div>
+</body>
+</html>
